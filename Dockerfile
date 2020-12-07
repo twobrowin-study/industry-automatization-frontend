@@ -1,6 +1,7 @@
 FROM node:latest as builder
 WORKDIR /app
 COPY src package.json package-lock.json ./
+RUN npm install
 RUN npm run build
 
 FROM nginx:latest
