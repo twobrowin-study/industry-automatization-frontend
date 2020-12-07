@@ -1,4 +1,4 @@
-image: twobrowin/runners:kubectl-buildah
+image: twobrowin/runners:alpine-kubectl-buildah
 
 deploy:
   script:
