@@ -28,9 +28,9 @@ spec:
   selector:
     app: front
   ports:
-    - name: "8180"
+    - name: "8080"
       port: 8180
-      targetPort: 8180
+      targetPort: 8080
 status:
   loadBalancer: {}
 
@@ -58,4 +58,4 @@ spec:
               service:
                 name: front
                 port:
-                  number: 8180
+                  number: 8080
