@@ -16,7 +16,7 @@ spec:
         - image: localhost:32000/front:latest
           name: front
           ports:
-            - containerPort: 8180
+            - containerPort: 80
 
 ---
 
@@ -28,9 +28,9 @@ spec:
   selector:
     app: front
   ports:
-    - name: "8080"
-      port: 8180
-      targetPort: 8080
+    - name: "80"
+      port: 80
+      targetPort: 80
 status:
   loadBalancer: {}
 
@@ -58,4 +58,4 @@ spec:
               service:
                 name: front
                 port:
-                  number: 8080
+                  number: 80
