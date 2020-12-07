@@ -1,7 +1,8 @@
-image: twobrowin/runners:alpine-kubectl-buildah
+image: twobrowin/runners:kubectl-buildah
 
 deploy:
   script:
+    - dnf install runc -y
     - buildah --storage-driver=vfs bud -t front .
     - buildah push --storage-driver=vfs --tls-verify=false --creds $DOCKER_PUSH_CREDS tuned-keycloak $DOCKER_PUSH_REGISTRY/front:latest
     - kubectl --kubeconfig $KUBECTL_CONFIG --token $KUBECTL_USER_TOCKEN apply -f front.yaml
