@@ -1,0 +1,9 @@
+.home-page-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    min-height: 100vh;
+}
+
+.home-page-content > .catalog-list {
+    margin-right: 10px;
+}

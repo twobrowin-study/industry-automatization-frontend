@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #6C7A89;
+    color: #D35400;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75px;
+}
+.navbar-logo {
+    width: 50px;
+    height: 75px;
+}
+
+.navbar-item{
+    margin: 20px;
+    padding: 10px;
+}
+
+.navbar-item div {
+    margin: 10px;
+    padding: 10px;
+}
