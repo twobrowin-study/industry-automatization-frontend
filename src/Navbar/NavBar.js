@@ -9,6 +9,7 @@ export default class NavBar extends React.Component {
             <div className='navbar'>
                 <div className='navbar-item'>
                     <img className='navbar-logo' src={logo}/>
+                    <div>Производство</div>
                 </div>
                 <div className='navbar-item'>
                     <div>Имя пользователя</div>

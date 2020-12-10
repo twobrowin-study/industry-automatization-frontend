@@ -1,0 +1,62 @@
+.project-list{
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+    border:1px solid #c0cdc0;
+}
+
+.project-list-item{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c0cdc0;
+}
+
+
+.file{
+    display: flex;
+    padding: 10px;
+}
+
+.file-info {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.file:hover {
+    background-color: #c0cdc0;
+}
+
+.subproject{
+    padding: 10px;
+}
+
+.subproject .header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subproject .header .arrow{
+    margin: 10px;
+}
+
+.subproject .header .project-info-and-icon{
+    display: flex;
+}
+
+.subproject .header .project-info-and-icon .project-info{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.subproject .list-files {
+    border: 1px solid #c0cdc0;
+    margin: 10px;
+    padding:10px;
+}
+
+.subproject .list-files .list-files-item{
+    border-bottom: 1px solid #c0cdc0;
+}
+
+.subproject .list-files .list-files-item:hover{
+    background-color: #c0cdc0;
+}

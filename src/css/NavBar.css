@@ -2,21 +2,23 @@
     background-color: #6C7A89;
     color: #D35400;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     min-height: 75px;
 }
 .navbar-logo {
     width: 50px;
-    height: 75px;
+    height: 50px;
 }
 
 .navbar-item{
-    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 10px;
 }
 
 .navbar-item div {
-    margin: 10px;
     padding: 10px;
 }

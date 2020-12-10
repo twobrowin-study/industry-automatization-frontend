@@ -1,0 +1,17 @@
+.list-project {
+    padding: 10px;
+}
+
+.list-project-item {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+}
+
+.list-project-item-content{
+    padding: 10px;
+}
+.list-project-item:hover{
+    background-color: #c0cdc0;
+    cursor: pointer;
+}

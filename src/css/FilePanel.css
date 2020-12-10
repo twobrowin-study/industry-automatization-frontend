@@ -1,0 +1,11 @@
+.file-panel-content{
+    margin: 10px;
+    padding: 10px;
+    background-color:#6C7A89;
+    color: #D35400;
+}
+
+.file-panel-content > div {
+    margin: 10px;
+    padding: 10px;
+}

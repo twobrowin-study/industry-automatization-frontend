@@ -1,244 +1,45 @@
 import React from 'react'
-import NavBar from "../Navbar/NavBar";
-import CatalogList from "./CatalogList";
+import NavBar from "../Navbar/NavBar"
+import Content from './Content'
+import FilePanel from './Project/FilePanel'
 import '../css/HomePage.css'
 
 export default class HomePage extends React.Component {
-    render() {
-        const list1 = [
-            {
-                type:'catalog',
-                name: 'testCatalog1',
-                list: [
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog2',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile1.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile2.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile3.txt'
-                            }
-                        ]
-                    },
-                    {
-                        type: 'file',
-                        name: 'testFile4.txt'
-                    },
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog3',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile5.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile6.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile7.txt'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                type:'catalog',
-                name: 'testCatalog1',
-                list: [
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog2',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile1.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile2.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile3.txt'
-                            }
-                        ]
-                    },
-                    {
-                        type: 'file',
-                        name: 'testFile4.txt'
-                    },
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog3',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile5.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile6.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile7.txt'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                type:'catalog',
-                name: 'testCatalog1',
-                list: [
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog2',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile1.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile2.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile3.txt'
-                            }
-                        ]
-                    },
-                    {
-                        type: 'file',
-                        name: 'testFile4.txt'
-                    },
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog3',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile5.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile6.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile7.txt'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                type:'catalog',
-                name: 'testCatalog1',
-                list: [
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog2',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile1.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile2.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile3.txt'
-                            }
-                        ]
-                    },
-                    {
-                        type: 'file',
-                        name: 'testFile4.txt'
-                    },
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog3',
-                        list: [
-                            {
-                                type: 'file',
-                                name: 'testFile5.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile6.txt'
-                            },
-                            {
-                                type: 'file',
-                                name: 'testFile7.txt'
-                            }
-                        ]
-                    }
-                ]
+    constructor(props) {
+        super(props)
+        this.showFilePanel = this.showFilePanel.bind(this)
+    }
+    state = {
+        filePanel : {isOpen: false, file: null}
+    }
+
+    showFilePanel(file) {
+        this.setState({
+            filePanel: {
+                isOpen: true,
+                file: file
             }
-            ]
-        const list2 = [
-            {
-                type:'catalog',
-                name: 'testCatalog1',
-                list: [
-                    {
-                        type: 'catalog',
-                        name: 'testCatalog2',
-                        list: [
-                            {
-                                type: 'catalog',
-                                name: 'testCatalog3',
-                                list: [
-                                    {
-                                        type: 'catalog',
-                                        name: 'testCatalog4',
-                                        list: [
-                                            {
-                                                type: 'catalog',
-                                                name: 'testCatalog5',
-                                                list: [
-                                                    {
-                                                        type: 'file',
-                                                        name: 'testFile1.txt'
-                                                    },
-                                                    {
-                                                        type: 'file',
-                                                        name: 'testFile2.txt'
-                                                    },
-                                                    {
-                                                        type: 'file',
-                                                        name: 'testFile3.txt'
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-        ]
+        })
+    }
+
+    render() {
         return(
-            <div className='home-page-content'>
+            <div>
                 <NavBar />
-                <CatalogList list={list1}/>
+                <div className='container'>
+                    <div>
+                        <div>
+                        </div>
+                        <div className='content-panel'>
+                            <Content content='listProject' showFilePanel={this.showFilePanel}/>
+                        </div>
+                        <div className='file-panel'>
+                            {this.state.filePanel.isOpen && (
+                                <FilePanel element={this.state.filePanel.file}/>
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
