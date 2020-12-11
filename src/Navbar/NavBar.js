@@ -16,6 +16,11 @@ export default class NavBar extends React.Component {
 
     }
 
+    logout = (e) => {
+        e.preventDefault()
+        this.props.keycloak.logout()
+    }
+
     render() {
         return (
             <div className='navbar'>
@@ -26,7 +31,7 @@ export default class NavBar extends React.Component {
                 <div className='navbar-item'>
                     <div>{this.state.name}</div>
                     <div>{this.state.email}</div>
-                    <div>Выйти</div>
+                    <div className='navbar-button' onClick={this.logout}>Выйти</div>
                 </div>
             </div>
         )

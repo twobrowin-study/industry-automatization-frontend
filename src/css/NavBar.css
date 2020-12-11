@@ -22,3 +22,8 @@
 .navbar-item div {
     padding: 10px;
 }
+
+.navbar-button:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
