@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
 
     render() {
                 return(<div>
-                    <NavBar />
+                    <NavBar keycloak={this.props.keycloak} />
                     <div className='container'>
                         <div>
                             <div>

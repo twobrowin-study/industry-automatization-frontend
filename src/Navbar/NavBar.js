@@ -3,6 +3,18 @@ import logo from '../img/logo.svg'
 import '../css/NavBar.css'
 
 export default class NavBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.props.keycloak.loadUserInfo().then(userInfo => {
+            this.setState({
+                name: userInfo.name, email: userInfo.email
+            })
+        })
+    }
+
+    state = {
+
+    }
 
     render() {
         return (
@@ -12,7 +24,8 @@ export default class NavBar extends React.Component {
                     <div>Производство</div>
                 </div>
                 <div className='navbar-item'>
-                    <div>Имя пользователя</div>
+                    <div>{this.state.name}</div>
+                    <div>{this.state.email}</div>
                     <div>Выйти</div>
                 </div>
             </div>

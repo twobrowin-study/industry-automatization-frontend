@@ -37,7 +37,7 @@ export default class App extends React.Component {
     render() {
             if(this.state.keycloak) {
                 if(this.state.authenticated){
-                    return(<HomePage/>)
+                    return(<HomePage keycloak={this.state.keycloak}/>)
                 }
                 else {
                     return(<div>this.state.authenticated - false</div>)
