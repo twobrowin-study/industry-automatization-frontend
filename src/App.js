@@ -7,7 +7,8 @@ export default class App extends React.Component {
     }
 
     state = {
-        page: 'home'
+        page: 'home',
+        keycloak: window.keycloak
     }
 
     async getData(url,) {
@@ -25,11 +26,25 @@ export default class App extends React.Component {
         return result
     }
 
+    componentDidMount() {
+        this.state.keycloak.init({ onLoad: 'login-required' }).then(authenticated => {
+            this.setState({
+                keycloak: window.keycloak, authenticated: authenticated
+            })
+        })
+    }
+
     render() {
-        return(
-            <div>
-                <HomePage/>
-            </div>
-        )
+            if(this.state.keycloak) {
+                if(this.state.authenticated){
+                    return(<HomePage/>)
+                }
+                else {
+                    return(<div>this.state.authenticated - false</div>)
+                }
+            }
+            else {
+                return(<div>this.state.keycloak -false</div>)
+            }
     }
 }

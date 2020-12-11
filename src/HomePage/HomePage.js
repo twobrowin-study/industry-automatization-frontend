@@ -13,6 +13,7 @@ export default class HomePage extends React.Component {
         filePanel : {isOpen: false, file: null}
     }
 
+
     showFilePanel(file) {
         this.setState({
             filePanel: {
@@ -23,24 +24,23 @@ export default class HomePage extends React.Component {
     }
 
     render() {
-        return(
-            <div>
-                <NavBar />
-                <div className='container'>
-                    <div>
+                return(<div>
+                    <NavBar />
+                    <div className='container'>
                         <div>
-                        </div>
-                        <div className='content-panel'>
-                            <Content content='listProject' showFilePanel={this.showFilePanel}/>
-                        </div>
-                        <div className='file-panel'>
-                            {this.state.filePanel.isOpen && (
-                                <FilePanel element={this.state.filePanel.file}/>
-                            )}
+                            <div>
+                            </div>
+                            <div className='content-panel'>
+                                <Content content='listProject' showFilePanel={this.showFilePanel}/>
+                            </div>
+                            <div className='file-panel'>
+                                {this.state.filePanel.isOpen && (
+                                    <FilePanel element={this.state.filePanel.file}/>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        )
+                </div>)
+
     }
 }
