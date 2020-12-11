@@ -46,5 +46,8 @@ export default class App extends React.Component {
             else {
                 return(<div>this.state.keycloak -false</div>)
             }
+        // return(
+        //     <HomePage/>
+        // )
     }
 }

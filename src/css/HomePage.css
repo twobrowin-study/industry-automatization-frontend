@@ -1,11 +1,9 @@
 .container {
-    display: flex;
-    justify-content: center;
 }
 
 .container > div {
     display: grid;
-    grid-template-columns: 400px 900px 400px;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 .icon-arrow {

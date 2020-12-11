@@ -1,11 +1,26 @@
 .file-panel-content{
-    margin: 10px;
-    padding: 10px;
-    background-color:#6C7A89;
     color: #D35400;
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    margin-top: 75px;
+    padding-top: 20px;
+    border-left: 1px solid #c0cdc0;
+}
+
+.file-panel-content:hover {
+    background-color: #f5f0f0;
 }
 
 .file-panel-content > div {
     margin: 10px;
+    padding: 10px;
+}
+
+.file-panel-content > h2 {
     padding: 10px;
 }

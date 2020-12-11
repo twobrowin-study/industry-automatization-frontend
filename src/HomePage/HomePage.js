@@ -28,8 +28,6 @@ export default class HomePage extends React.Component {
                     <NavBar keycloak={this.props.keycloak} />
                     <div className='container'>
                         <div>
-                            <div>
-                            </div>
                             <div className='content-panel'>
                                 <Content content='listProject' showFilePanel={this.showFilePanel}/>
                             </div>
