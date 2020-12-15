@@ -6,6 +6,7 @@ RUN npm install
 
 COPY src /app/src
 COPY public /app/public
+RUN npm test
 RUN npm run build
 
 FROM nginx:latest

@@ -13,8 +13,6 @@ export default class NavBar extends React.Component {
     }
 
     state = {
-        // name: "Имя пользователя",
-        // email: "email@mail.com"
         name: "",
         email: ""
     }

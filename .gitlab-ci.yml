@@ -1,14 +1,8 @@
 stages:
-- test
 - buildah
 - envsubst
 - kubectl
 
-test:
-  image: twobrowin/gitlab-runners:openjdk11
-  stage: test
-  script:
-  - echo "Here would be tests"
 
 buildah:
   image: twobrowin/gitlab-runners:buildah
