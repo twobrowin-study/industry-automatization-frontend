@@ -1,0 +1,22 @@
+.project-name{
+    display:flex;
+    flex-direction: row;
+}
+.project-name h2{
+    margin-right: 10px;
+}
+.project-navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.project-navbar .backbutton {
+    padding-top: 20px;
+}
+
+.project-navbar .backbutton:hover {
+    text-decoration: underline;
+    color: #D35400;
+    cursor: pointer;
+}

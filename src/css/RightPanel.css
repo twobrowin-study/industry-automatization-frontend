@@ -1,0 +1,51 @@
+.right-panel-content{
+    color: #D35400;
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    margin-top: 75px;
+    padding-top: 20px;
+    border-left: 1px solid #c0cdc0;
+}
+
+.right-panel-content:hover {
+    background-color: #f5f0f0;
+}
+
+.right-panel-content > div {
+    margin: 10px;
+    padding: 10px;
+}
+
+.right-panel-content > h2 {
+    padding: 10px;
+}
+
+.right-panel-content .right-panel-group {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.right-panel-content .right-panel-group div{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.right-panel-content .interaction {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel-content .interaction div {
+    margin-bottom: 10px;
+}
+
+.right-panel-content .interaction .task:hover {
+    text-decoration: underline;
+    color: #D35400;
+    cursor: pointer;
+}

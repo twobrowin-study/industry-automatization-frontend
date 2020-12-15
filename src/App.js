@@ -11,27 +11,20 @@ export default class App extends React.Component {
         keycloak: window.keycloak
     }
 
-    async getData(url,) {
-        let result = await fetch(url, {
-            method: 'GET'
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-               return data
-            });
-
-        console.log(result)
-        return result
-    }
 
     componentDidMount() {
-        this.state.keycloak.init({ onLoad: 'login-required' }).then(authenticated => {
-            this.setState({
-                keycloak: window.keycloak, authenticated: authenticated
+        if(this.state.keycloak) {
+            this.state.keycloak.init({ onLoad: 'login-required' }).then(authenticated => {
+                this.setState({
+                    keycloak: window.keycloak, authenticated: authenticated
+                })
+                setInterval(() => {this.state.keycloak.updateToken(5).success(function(refreshed) {
+                }).error(function() {
+                    window.keycloak.logout();
+                })},60 * 1000)
+
             })
-        })
+        }
     }
 
     render() {
@@ -44,10 +37,7 @@ export default class App extends React.Component {
                 }
             }
             else {
-                return(<div>this.state.keycloak -false</div>)
+                return(<div>Сервис недоступен, попробуйте позже</div>)
             }
-        // return(
-        //     <HomePage/>
-        // )
     }
 }

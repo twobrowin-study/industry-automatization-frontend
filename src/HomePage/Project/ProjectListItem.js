@@ -8,11 +8,11 @@ export default class ProjectListItem extends React.Component {
     }
     render() {
         let element
-        if(this.props.element.type == 'file') {
-            element = <File element={this.props.element} showFilePanel={this.props.showFilePanel}/>
+        if(this.props.element.processDefinitionKey == 'Process_t1-1M1g1T') {
+            element = <File element={this.props.element} showFilePanel={this.props.showFilePanel} keycloak={this.props.keycloak} myContext={this.props.myContext}/>
         }
-        else if (this.props.element.type == 'subproject') {
-            element = <SubProject element={this.props.element} showFilePanel={this.props.showFilePanel}/>
+        else if (this.props.element.processDefinitionKey == 'Process_i5ugxdvpu') {
+            element = <SubProject element={this.props.element} showFilePanel={this.props.showFilePanel} keycloak={this.props.keycloak} myContext={this.props.myContext}/>
         }
         return(
             <div className='project-list-item'>

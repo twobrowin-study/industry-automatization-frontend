@@ -7,15 +7,12 @@ export default class ProjectList extends React.Component {
         super(props)
     }
 
-    state = {
-
-    }
 
     render() {
         return(
                 <div className='project-list'>
                     {this.props.list.map((value) =>
-                        <ProjectListItem element={value} showFilePanel={this.props.showFilePanel}/>
+                        <ProjectListItem element={value} showFilePanel={this.props.showFilePanel} keycloak={this.props.keycloak} myContext={this.props.myContext}/>
                     )
                     }
                 </div>

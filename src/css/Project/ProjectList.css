@@ -47,6 +47,12 @@
     margin-left: 15px;
 }
 
+.subproject .header .project-info-and-icon .project-info:hover{
+    text-decoration: underline;
+    color: #D35400;
+    cursor: pointer;
+}
+
 .subproject .list-files {
     border: 1px solid #c0cdc0;
     margin: 10px;
