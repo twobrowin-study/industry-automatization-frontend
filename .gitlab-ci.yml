@@ -1,8 +1,34 @@
-image: twobrowin/runners:fedora-kubectl-buildah
+stages:
+- test
+- buildah
+- envsubst
+- kubectl
 
-deploy:
+test:
+  image: twobrowin/gitlab-runners:openjdk11
+  stage: test
   script:
-    - kubectl --kubeconfig $KUBECTL_CONFIG --token $KUBECTL_USER_TOCKEN delete deploy/front
-    - buildah --storage-driver=vfs bud -t front .
-    - buildah push --storage-driver=vfs --tls-verify=false --creds $DOCKER_PUSH_CREDS front $DOCKER_PUSH_REGISTRY/front:latest
-    - kubectl --kubeconfig $KUBECTL_CONFIG --token $KUBECTL_USER_TOCKEN apply -f front.yaml
+  - echo "Here would be tests"
+
+buildah:
+  image: twobrowin/gitlab-runners:buildah
+  stage: buildah
+  script:
+  - buildah --storage-driver=vfs bud -t $DOCKER_PUSH_REGISTRY/front:${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA} .
+  - buildah push --storage-driver=vfs --tls-verify=false --creds $DOCKER_PUSH_CREDS $DOCKER_PUSH_REGISTRY/front:${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA}
+
+envsubst:
+  image: twobrowin/gitlab-runners:envsubs
+  stage: envsubst
+  script:
+  - envsubst -i front.yaml -o front-${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA}.yaml
+  artifacts:
+    paths:
+    - front-${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA}.yaml
+    expire_in: 30 minutes
+
+kubectl:
+  image: twobrowin/gitlab-runners:kubectl
+  stage: kubectl
+  script:
+  - kubectl --kubeconfig $KUBECTL_CONFIG --token $KUBECTL_USER_TOCKEN apply --record -f front-${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA}.yaml
