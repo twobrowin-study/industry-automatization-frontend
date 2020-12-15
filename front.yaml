@@ -13,7 +13,7 @@ spec:
         app: front
     spec:
       containers:
-        - image: ${DOCKER_PULL_REGISTRY}:32000/front:${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA}
+        - image: ${DOCKER_PULL_REGISTRY}/front:${CI_COMMIT_BRANCH}-${CI_COMMIT_SHORT_SHA}
           name: front
           ports:
             - containerPort: 80
