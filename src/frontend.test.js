@@ -62,7 +62,7 @@ it("should render nav", () => {
     act(() => {
         render(<NavBar keycloak={keycloak}/>, container)
     })
-    expect(container.innerHTML).toBe("<div class=\"navbar\"><div class=\"navbar-item\"><img class=\"navbar-logo\" src=\"logo.svg\"><div>Производство</div></div><div class=\"navbar-item\"><div></div><div>alex</div><div class=\"navbar-button\">Выйти</div></div></div>");
+    expect(container.innerHTML).toBe("<div class=\"navbar\"><div class=\"navbar-item\"><img class=\"navbar-logo\" src=\"logo.svg\"><div>Производство</div></div><div class=\"navbar-item\"><div></div><div></div><div class=\"navbar-button\">Выйти</div></div></div>");
 });
 
 it("should render filepanel", () => {
